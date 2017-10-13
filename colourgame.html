@@ -1,26 +1,24 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Colour Game</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-<div class="jumbotron text-center">
-<h3>The Great</h3>
-<h1>RGB(211, 206, 13)</h1>
-<h3>Guessing Game	</h3>
+<div id="header">
+  <h1>The Great <span id="colorDisplay">RGB</span> Guessing Game</h
 </div>
-<!-- end of jumbtron -->
+    
+<div>
+  <span id="message"></span>
+    </div>
 
-<nav class="navbar navbar-default">
-	
-</nav>
-<!-- end of navbar -->
 
-<div class="containter">
+
+<div class="container">
 
 <div class="square"></div>
 <div class="square"></div>
@@ -34,6 +32,5 @@
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="colour.js"></script>
 </body>
-</html>

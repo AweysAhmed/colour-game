@@ -1,24 +1,31 @@
-
 * {
 	box-sizing: border-box;
 }
 
-nav {
-	margin-top: -40px;
-
+body {
+background-color: #232323;
 }
 
-.navbar-default {
-	background-color: white;
+#header {
+  text-align: center;
+  background-color: steelblue;
 }
 
 h1 {
 	color: pink;
 }
 
+h3 {
+  color: white;
+}
+
+#message {
+  color: white;
+}
+
 .container {
-	margin: auto 0;
-	width: 50%;
+	margin: 0 auto;
+	width: 600px;
 }
 
 
@@ -28,4 +35,5 @@ margin: 1.6%;
 background-color: green;
 float: left;
 height: 150px;
+border-radius: 25px;
 }
