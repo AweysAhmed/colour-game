@@ -1,10 +1,71 @@
-var colors = generateRandomColors(6);
+var numSquare = 6;
+var colors = generateRandomColors(numSquare);
 var squares = document.querySelectorAll(".square");
 var pickedColor = pickColor();
 var displayColor = document.getElementById("colorDisplay");
 displayColor.textContent = pickedColor;
 var messageDisplay = document.querySelector("#message");
 var header = document.querySelector("#header");
+var resetGame = document.querySelector("#reset");
+var easyBtn = document.querySelector("#easyBtn");
+var hardBtn = document.querySelector("#hardBtn");
+
+
+
+
+
+
+  
+  
+
+
+easyBtn.addEventListener("click", function(){
+  numSquare = 3;
+  easyBtn.classList.add("selected");
+  hardBtn.classList.remove("selected");
+  colors = generateRandomColors(numSquare);
+  pickedColor = pickColor();
+  displayColor.textContent = pickedColor;
+  for(var i = 0; i < squares.length; i++){
+    if (colors[i]){
+      squares[i].style.backgroundColor = colors[i]
+    } else {
+      squares[i].style.display = "none";
+    }
+  }
+  
+});
+
+hardBtn.addEventListener("click", function(){
+  numSquare = 6;
+  hardBtn.classList.add("selected");
+  easyBtn.classList.remove("selected");
+  colors = generateRandomColors(numSquare);
+  pickedColor = pickColor();
+  displayColor.textContent = pickedColor;
+  for (var i = 0; i < squares.length; i++){
+    squares[i].style.display = "block";
+    squares[i].style.backgroundColor = colors[i];
+    
+  }
+  
+});
+
+resetGame.addEventListener("click", function(){
+  colors = generateRandomColors(numSquare);
+  pickedColor = pickColor();
+  displayColor.textContent = pickedColor;
+  messageDisplay.textContent = "";
+  header.style.backgroundColor = "steelblue";
+  resetGame.textContent = "New Colors?";
+  for(var i = 0; i < squares.length; i++){
+    squares[i].style.backgroundColor = colors[i];
+  }
+  
+});
+
+
+
 
 
 for(var i = 0; i < squares.length; i++) {
@@ -17,6 +78,7 @@ var clickedColor = this.style.backgroundColor;
     
   if (clickedColor === pickedColor){
     messageDisplay.textContent = "Correct!";
+    resetGame.textContent = "Play Again?";
     changeColors(clickedColor);
     header.style.backgroundColor = clickedColor;
   }
@@ -55,3 +117,9 @@ function generateRandomColors(num) {
   return arr;
   
 }
+
+
+
+
+  
+  
